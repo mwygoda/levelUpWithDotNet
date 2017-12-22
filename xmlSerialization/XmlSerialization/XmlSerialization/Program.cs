@@ -31,30 +31,28 @@ namespace XmlSerialization
             var serializer = new XmlSerializer(legendarySquad.GetType());
             var serializer2 = new XmlSerializer(changedXmlLegendarySquad.GetType());
 
-            //            Part 1a 
+            // Part 1a 
 
             using (var writer = new StreamWriter(@"a.xml"))
             {
                 serializer.Serialize(writer, legendarySquad);
             }
-            //            Part 1b 
+            //Part 1b 
             using (var writer = new StreamWriter(@"b.xml"))
             {
                 serializer2.Serialize(writer, changedXmlLegendarySquad);
             }
-            //            Part 2 -> reading file with linq to xml
+            // Part 2 -> reading file with linq to xml
 
             Console.WriteLine("Best Duo in basketball history is ");
 
             var xmlDoc = XDocument.Load(@"a.xml");
 
             xmlDoc.Descendants("Player").Select(
-                p => new Player(p.Element("Name").Value, Int32.Parse(p.Element("JerseyNumber").Value))
-            ).Where(p => p.Name == "Jordan" || p.JerseyNumber == 33)
-            .ToList().ForEach(p =>
-            {
-                Console.WriteLine("Player Name: " + p.Name);
-            });
+                    p => new Player(p.Element("Name").Value, Int32.Parse(p.Element("JerseyNumber").Value))
+                ).Where(p => p.Name == "Jordan" || p.JerseyNumber == 33)
+                .ToList()
+                .ForEach(p => { Console.WriteLine("Player Name: " + p.Name); });
             Console.ReadLine();
         }
     }
