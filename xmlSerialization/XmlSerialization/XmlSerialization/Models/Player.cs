@@ -9,7 +9,6 @@ namespace XmlSerialization.Models
     {
         public string Name { get; set; }
         public int JerseyNumber { get; set; }
-
         [XmlIgnore]
         public int Age { get; set; }
 

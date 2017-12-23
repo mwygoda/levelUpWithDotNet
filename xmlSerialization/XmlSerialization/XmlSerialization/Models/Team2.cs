@@ -8,8 +8,7 @@ namespace XmlSerialization.Models
     {
         [XmlElement("DIFFRENTTEAMNAME")]
         public string TeamName { get; set; }
-
-        [XmlArray()]
+        [XmlElement("Basketballer")]
         public List<Player> Roster { get; set; }
     }
 }

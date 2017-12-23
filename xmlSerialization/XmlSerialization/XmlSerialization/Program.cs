@@ -24,7 +24,7 @@ namespace XmlSerialization
 
             legendarySquad.TeamName = "Chicago Bulls 1991";
             legendarySquad.Roster = squad;
-
+             
             changedXmlLegendarySquad.TeamName = "Chicago Bulls Again but a bit differ";
             changedXmlLegendarySquad.Roster = squad;
 
@@ -37,11 +37,14 @@ namespace XmlSerialization
             {
                 serializer.Serialize(writer, legendarySquad);
             }
+
             //Part 1b 
+
             using (var writer = new StreamWriter(@"b.xml"))
             {
                 serializer2.Serialize(writer, changedXmlLegendarySquad);
             }
+
             // Part 2 -> reading file with linq to xml
 
             Console.WriteLine("Best Duo in basketball history is ");
