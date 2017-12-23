@@ -51,7 +51,8 @@ namespace XmlSerialization
 
             var xmlDoc = XDocument.Load(@"a.xml");
 
-            xmlDoc.Descendants("Player").Select(
+            xmlDoc.Descendants("Player")
+                .Select(
                     p => new Player(p.Element("Name").Value, Int32.Parse(p.Element("JerseyNumber").Value))
                 ).Where(p => p.Name == "Jordan" || p.JerseyNumber == 33)
                 .ToList()
