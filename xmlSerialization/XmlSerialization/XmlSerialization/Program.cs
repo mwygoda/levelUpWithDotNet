@@ -12,6 +12,13 @@ namespace XmlSerialization
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Best Duo in basketball history is ");
+        }
+
+        static void ForSureNotMain()
+        {
+            Console.WriteLine("This is True Main");
+
             var legendarySquad = new Team();
             var changedXmlLegendarySquad = new Team2();
             var squad = new List<Player>();
@@ -24,7 +31,7 @@ namespace XmlSerialization
 
             legendarySquad.TeamName = "Chicago Bulls 1991";
             legendarySquad.Roster = squad;
-             
+
             changedXmlLegendarySquad.TeamName = "Chicago Bulls Again but a bit differ";
             changedXmlLegendarySquad.Roster = squad;
 
