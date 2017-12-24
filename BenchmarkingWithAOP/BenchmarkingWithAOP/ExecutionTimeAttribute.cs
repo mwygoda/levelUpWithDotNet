@@ -9,18 +9,18 @@ namespace BenchmarkingWithAOP
     [AttributeUsage(AttributeTargets.Method)]
     public sealed class ExecutionTimeAttribute : OnMethodBoundaryAspect
     {
-        private static readonly Stopwatch timer = new Stopwatch();
+        private static readonly Stopwatch Timer = new Stopwatch();
 
         public override void OnEntry(MethodExecutionArgs args)
         {
-            timer.Start();
+            Timer.Start();
         }
 
         public override void OnExit(MethodExecutionArgs args)
         {
-            var timeInMilliseconds = timer.ElapsedMilliseconds;
-            timer.Reset();
-            timer.Stop();
+            var timeInMilliseconds = Timer.ElapsedMilliseconds;
+            Timer.Reset();
+            Timer.Stop();
             Console.WriteLine(timeInMilliseconds);
         }
     }
