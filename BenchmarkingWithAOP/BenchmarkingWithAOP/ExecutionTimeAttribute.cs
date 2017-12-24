@@ -19,6 +19,7 @@ namespace BenchmarkingWithAOP
         public override void OnExit(MethodExecutionArgs args)
         {
             var timeInMilliseconds = timer.ElapsedMilliseconds;
+            timer.Reset();
             timer.Stop();
             Console.WriteLine(timeInMilliseconds);
         }
