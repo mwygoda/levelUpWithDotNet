@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DelegatesExample
 {
-    class UsageOfFunc
+    public class UsageOfFunc
     {
     }
 }
