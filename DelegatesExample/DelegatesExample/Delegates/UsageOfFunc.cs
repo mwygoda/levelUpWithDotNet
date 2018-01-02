@@ -1,4 +1,6 @@
-﻿namespace DelegatesExample
+﻿using DelegatesExample.EmployeeFramework.Model;
+
+namespace DelegatesExample.Delegates
 {
     public class UsageOfFunc
     {

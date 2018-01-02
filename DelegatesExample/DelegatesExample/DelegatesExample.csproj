@@ -42,16 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomDelegate.cs" />
-    <Compile Include="EmployeeIntroductor.cs" />
-    <Compile Include="EmployeeModel.cs" />
+    <Compile Include="Delegates\CustomDelegate.cs" />
+    <Compile Include="EmployeeFramework\EmployeeServices\EmployeeIntroductor.cs" />
+    <Compile Include="EmployeeFramework\Model\EmployeeModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UsageOfAction.cs" />
-    <Compile Include="UsageOfFunc.cs" />
+    <Compile Include="Delegates\UsageOfAction.cs" />
+    <Compile Include="Delegates\UsageOfFunc.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

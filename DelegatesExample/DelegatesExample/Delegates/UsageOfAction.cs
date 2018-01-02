@@ -1,6 +1,7 @@
 ﻿using System;
+using DelegatesExample.EmployeeFramework.Model;
 
-namespace DelegatesExample
+namespace DelegatesExample.Delegates
 {
     public class UsageOfAction
     {

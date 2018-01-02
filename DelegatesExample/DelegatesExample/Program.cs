@@ -1,4 +1,7 @@
 ﻿using System;
+using DelegatesExample.Delegates;
+using DelegatesExample.EmployeeFramework.EmployeeServices;
+using DelegatesExample.EmployeeFramework.Model;
 
 namespace DelegatesExample
 {
@@ -13,21 +16,21 @@ namespace DelegatesExample
                 LastName = "Kowalski",
                 Profession = "Coding Knight"
             };
-            var usageOfFunc = new UsageOfFunc();
-            Func<EmployeeModel, string> firstnameHandler = usageOfFunc.GetEmployeeFirstname;
             var introductors = new EmployeeIntroductor();
-            Console.WriteLine("Using Custom Delegate");
+            var usageOfFunc = new UsageOfFunc();
             var customIntroduction = new CustomDelegate();
+            var actionIndroduction = new UsageOfAction();
+            Func<EmployeeModel, string> firstnameHandler = usageOfFunc.GetEmployeeFirstname;
+            Action<EmployeeModel> actionHandler = introductors.CallByFirstName;
+
+            Console.WriteLine("Using Custom Delegate");
             CustomDelegate.EmployeeIntroductionCustomHandler customHandler = introductors.CallByFirstName;
             customHandler += introductors.CallByLastName;
             customHandler += introductors.ShowTheProfession;
-            //new defined function
             customHandler += ShowAgeOfEmployee;
             customIntroduction.CustomIntroduct(johnKowalski, customHandler);
 
             Console.WriteLine("Using Action Delegate");
-            var actionIndroduction = new UsageOfAction();
-            Action<EmployeeModel> actionHandler = introductors.CallByFirstName;
             actionHandler += introductors.CallByLastName;
             actionHandler += introductors.ShowTheProfession;
             actionHandler += ShowAgeOfEmployee;
@@ -40,6 +43,7 @@ namespace DelegatesExample
             Console.ReadLine();
         }
 
+        //New Function NOT included to framework.
         private static void ShowAgeOfEmployee(EmployeeModel employee)
         {
             Console.WriteLine(employee.Age);
