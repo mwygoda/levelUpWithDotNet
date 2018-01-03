@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace ExtensionMethodDemo
 {
-    public static class StringHelper
+    public static class StringExtensions
     {
-        public static string ChangeFirstLetterToSeven(this string inputString)
+        public static string ChangeFirstLetterToSeven(this string @this)
         {
-            if (inputString.Length > 0)
+            if (@this.Length > 0)
             {
-                var charArray = inputString.ToCharArray();
+                var charArray = @this.ToCharArray();
                 charArray[0] = '7';
                 return new string(charArray);
             }
-            return inputString;
+            return @this;
         }
     }
 }
