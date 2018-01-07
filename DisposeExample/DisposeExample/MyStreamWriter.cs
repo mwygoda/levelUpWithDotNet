@@ -21,7 +21,7 @@ namespace DisposeExample
             _streamWriter.WriteLine(line);
         }
 
-    protected virtual void Dispose(bool b)
+        protected virtual void Dispose(bool b)
         {
             if (b)
             {
