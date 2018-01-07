@@ -14,8 +14,8 @@ namespace DisposeExample
         {
             string[] lines = {"This is LoremIpsumLine1", "This is LoremIpsumLine2", "This is LoremIpsumLine3", "This is LoremIpsumLine4" };
             const string path = @"name.txt";
-
             var writer = new MyStreamWriter(path);
+
             try
             {
                 foreach (var line in lines)
@@ -29,7 +29,7 @@ namespace DisposeExample
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Console.WriteLine("Something gone wrong: " + e);
             }
 
             Console.ReadLine();
@@ -40,7 +40,6 @@ namespace DisposeExample
             using (var reader = new StreamReader(path))
             {
                 var result = reader.ReadToEnd();
-
                 return result;
             }
         }

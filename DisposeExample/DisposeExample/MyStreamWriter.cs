@@ -10,10 +10,16 @@ namespace DisposeExample
     public class MyStreamWriter : IDisposable
     {
         private readonly StreamWriter _streamWriter;
+        private bool _disposed = false;
 
         public MyStreamWriter(string path)
         {
             _streamWriter = new StreamWriter(path);
+        }
+
+        ~MyStreamWriter()
+        {
+            Console.WriteLine("I will never show.");
         }
 
         public void WriteTextToFile(string line)
@@ -21,17 +27,28 @@ namespace DisposeExample
             _streamWriter.WriteLine(line);
         }
 
-        protected virtual void Dispose(bool b)
-        {
-            if (b)
-            {
-                _streamWriter.Dispose();
-            }
-        }
         public void Dispose()
         {
-            Dispose(true);
+            IsDisposed();
+            Dispose(_disposed);
             GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool b)
+        {
+            if (!b)
+            {
+                _streamWriter.Dispose();
+                _disposed = true;
+            }
+        }
+
+        private void IsDisposed()
+        {
+            if (_disposed)
+            {
+                throw new ObjectDisposedException("Disposed object can not be used any more");
+            }
         }
     }
 }
