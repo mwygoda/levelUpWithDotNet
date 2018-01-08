@@ -17,11 +17,6 @@ namespace DisposeExample
             _streamWriter = new StreamWriter(path);
         }
 
-        ~MyStreamWriter()
-        {
-            Console.WriteLine("I will never show.");
-        }
-
         public void WriteTextToFile(string line)
         {
             _streamWriter.WriteLine(line);
@@ -31,7 +26,7 @@ namespace DisposeExample
         {
             IsDisposed();
             Dispose(_disposed);
-            GC.SuppressFinalize(this);
+           // GC.SuppressFinalize(this); according to msdn we could want to suppress Finalazer.
         }
 
         protected virtual void Dispose(bool b)
