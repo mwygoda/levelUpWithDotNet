@@ -7,17 +7,17 @@ using EFloading.Models;
 
 namespace EFloading.Repositories
 {
-    public class ExplicitlyRepository
+    public class ExplicitRepository
     {
-        public FootballTeam GetTeam()
+        public FootballTeam GetTeam(int teamNumber)
         {
             using (var context = new FootballContext())
             {
                 context.Configuration.LazyLoadingEnabled = false;
-                var teamNoFive = context.FootballTeams
-                                        .FirstOrDefault(t => t.TeamId == 5);
-                context.Entry(teamNoFive).Collection(p => p.Players).Load();
-                return teamNoFive;
+                var choosenTeam = context.FootballTeams
+                                        .FirstOrDefault(t => t.TeamId == teamNumber);
+                context.Entry(choosenTeam).Collection(p => p.Players).Load();
+                return choosenTeam;
             }
         }
     }
