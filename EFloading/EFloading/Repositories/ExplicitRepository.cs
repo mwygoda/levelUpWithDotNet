@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using EFloading.Models;
 
 namespace EFloading.Repositories
@@ -15,7 +11,7 @@ namespace EFloading.Repositories
             {
                 context.Configuration.LazyLoadingEnabled = false;
                 var choosenTeam = context.FootballTeams
-                                        .FirstOrDefault(t => t.TeamId == teamNumber);
+                                         .FirstOrDefault(t => t.TeamId == teamNumber);
                 context.Entry(choosenTeam).Collection(p => p.Players).Load();
                 return choosenTeam;
             }
