@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DesignPatterns.Factory;
+using DesignPatterns.Strategy;
 
 namespace DesignPatterns
 {
@@ -13,7 +14,9 @@ namespace DesignPatterns
         {
             var abstractFactory = new AbstractFactoryClient();
             abstractFactory.StartApp();
-            Console.ReadLine();
+
+            var strategyExample = new StrategyClient();
+            strategyExample.StartApp();
         }
     }
 }

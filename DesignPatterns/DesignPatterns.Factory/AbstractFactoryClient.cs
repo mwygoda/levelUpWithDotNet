@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using DesignPatterns.Factory.ConcreteCreator;
 using DesignPatterns.Factory.Creator;
-using DesignPatterns.Factory.Product;
 
 namespace DesignPatterns.Factory
 {
@@ -40,6 +34,8 @@ namespace DesignPatterns.Factory
             Console.WriteLine("Your ordered bike is: \n");
             Console.WriteLine("Bike type: {0}\n Wheel size: {1} \n Price: {2}",
                 chosenBike.BikeType, chosenBike.WheelSize, chosenBike.Price);
+
+            Console.ReadLine();
         }
     }
 }
