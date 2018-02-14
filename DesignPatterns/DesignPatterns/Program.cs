@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DesignPatterns.CommandProject1;
 using DesignPatterns.Factory;
 using DesignPatterns.Strategy;
 
@@ -17,6 +18,9 @@ namespace DesignPatterns
 
             var strategyExample = new StrategyClient();
             strategyExample.StartApp();
+
+            var commandExample = new Client();
+            commandExample.StartCommandExample();
         }
     }
 }
