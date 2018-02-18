@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EBE17063-D805-417B-9CBF-F71C3D0378AE}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>DesignPatterns</RootNamespace>
-    <AssemblyName>DesignPatterns</AssemblyName>
+    <ProjectGuid>{BCDA673F-9A6E-4DB7-850D-DEC437FCB544}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DesignPatterns.Singleton</RootNamespace>
+    <AssemblyName>DesignPatterns.Singleton</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,29 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="MySingleton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DesignPatterns.CommandProject1\DesignPatterns.Command.csproj">
-      <Project>{EA00807F-D6C2-4C20-8FDD-DFFB8032D8D5}</Project>
-      <Name>DesignPatterns.Command</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DesignPatterns.Factory\DesignPatterns.Factory.csproj">
-      <Project>{252C24A7-99A2-45BE-8295-A6978BBE6029}</Project>
-      <Name>DesignPatterns.Factory</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DesignPatterns.Singleton\DesignPatterns.Singleton.csproj">
-      <Project>{BCDA673F-9A6E-4DB7-850D-DEC437FCB544}</Project>
-      <Name>DesignPatterns.Singleton</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DesignPatterns.Strategy\DesignPatterns.Strategy.csproj">
-      <Project>{32831101-DACE-4C86-A33B-FBDF5D69F9F8}</Project>
-      <Name>DesignPatterns.Strategy</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
