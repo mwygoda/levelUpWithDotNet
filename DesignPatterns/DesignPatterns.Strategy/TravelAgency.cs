@@ -4,10 +4,10 @@ namespace DesignPatterns.Strategy
 {
     public class TravelAgency
     {
-        public decimal Distance { get; set; }
+        public decimal Distance { private get; set; }
 
 
-        public ITransportStrategy CurrentStrategy;
+        private readonly ITransportStrategy CurrentStrategy;
         public TravelAgency(ITransportStrategy NewTransportStrategy)
         {
             CurrentStrategy = NewTransportStrategy;
