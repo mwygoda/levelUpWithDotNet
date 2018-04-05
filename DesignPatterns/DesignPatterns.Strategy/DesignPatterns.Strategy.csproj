@@ -44,6 +44,7 @@
     <Compile Include="Strategies\SpaceshipTransportStrategy.cs" />
     <Compile Include="Strategies\TaxiTransportStrategy.cs" />
     <Compile Include="StrategyClient.cs" />
+    <Compile Include="TravelAgency.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

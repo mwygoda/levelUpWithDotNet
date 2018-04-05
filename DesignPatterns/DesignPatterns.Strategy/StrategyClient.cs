@@ -7,18 +7,17 @@ namespace DesignPatterns.Strategy
     {
         public void StartApp()
         {
-            var distace = 30;
-            var taxiTransport = new TaxiTransportStrategy();
-            var bikeTransport = new BiketransportStrategy();
-            var spaceshipTransport = new SpaceshipTransportStrategy();
+            var taxiTransport = new TravelAgency(new TaxiTransportStrategy()) {Distance = 50};
+            var bikeTransport = new TravelAgency(new BiketransportStrategy()) {Distance = 120};
+            var spaceshipTransport = new TravelAgency(new SpaceshipTransportStrategy()) {Distance = 60};
 
-            var costByTaxi = taxiTransport.CalculateCost(distace);
+            var costByTaxi = taxiTransport.GetFinalTransportCost();
             Console.WriteLine("Cost of TaxiBy Transport: {0}", costByTaxi);
 
-            var costByBike = bikeTransport.CalculateCost(distace);
+            var costByBike = bikeTransport.GetFinalTransportCost();
             Console.WriteLine("Cost of bike rental and transport: {0}", costByBike);
 
-            var costBySpaceship = spaceshipTransport.CalculateCost(distace);
+            var costBySpaceship = spaceshipTransport.GetFinalTransportCost();
             Console.WriteLine("OH, cool~! Cost of travel by spaceship is: {0}", costBySpaceship);
 
             Console.ReadLine();
