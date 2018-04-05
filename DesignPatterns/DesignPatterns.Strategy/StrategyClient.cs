@@ -19,7 +19,11 @@ namespace DesignPatterns.Strategy
 
             var costBySpaceship = spaceshipTransport.GetFinalTransportCost();
             Console.WriteLine("OH, cool~! Cost of travel by spaceship is: {0}", costBySpaceship);
-
+            
+            spaceshipTransport.ChangeStrategy(new BiketransportStrategy());
+            var costChangedFromSpaceshipToBike = spaceshipTransport.GetFinalTransportCost();
+            Console.WriteLine("You changed from spaceship to bike? to expensive huh? cost will be: {0}", costChangedFromSpaceshipToBike);
+            
             Console.ReadLine();
         }
     }

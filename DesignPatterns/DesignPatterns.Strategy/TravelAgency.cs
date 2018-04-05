@@ -6,8 +6,7 @@ namespace DesignPatterns.Strategy
     {
         public decimal Distance { private get; set; }
 
-
-        private readonly ITransportStrategy CurrentStrategy;
+        private ITransportStrategy CurrentStrategy;
         public TravelAgency(ITransportStrategy NewTransportStrategy)
         {
             CurrentStrategy = NewTransportStrategy;
@@ -16,6 +15,11 @@ namespace DesignPatterns.Strategy
         public decimal GetFinalTransportCost()
         {
             return CurrentStrategy.CalculateCost(Distance);
+        }
+
+        public void ChangeStrategy(ITransportStrategy NewTransportStrategy)
+        {
+            CurrentStrategy = NewTransportStrategy;
         }
     }
 }
